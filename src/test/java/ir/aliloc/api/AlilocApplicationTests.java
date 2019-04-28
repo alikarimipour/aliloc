@@ -1,12 +1,7 @@
 package ir.aliloc.api;
 
-import com.google.gson.Gson;
-import ir.aliloc.api.core.cours_category.CourseCategoryDTO;
-import ir.aliloc.api.core.enums.ECourseTypeEnum;
-import ir.aliloc.api.core.question.IQuestionService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -14,8 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class AlilocApplicationTests {
 
-	@Autowired
- 	private IQuestionService mIQuestionService;
+	/*@Autowired
+ 	private IQuestionService mIQuestionService;*/
 
 	@Test
 	public void contextLoads() {
@@ -30,10 +25,10 @@ public class AlilocApplicationTests {
 		System.out.println("salam");
 		System.out.println(certificates);
 		System.out.println(certificates);*/
-		CourseCategoryDTO courseCategoryDTO=new CourseCategoryDTO();
+		/*CourseCategoryDTO courseCategoryDTO=new CourseCategoryDTO();
 		courseCategoryDTO.setType(ECourseTypeEnum.COURSE);
 		Gson gson=new Gson();
-		System.out.println(gson.toJson(courseCategoryDTO));
+		System.out.println(gson.toJson(courseCategoryDTO));*/
 
 	}
 
