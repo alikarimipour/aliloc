@@ -1,14 +1,12 @@
 /**
  * 3/6/2018
- * author: mostafa.mashayekhi9@gmail.com
+ * author: alikarimipour157@gmail.com
  */
 package ir.aliloc.api.core.authentication;
 
 
 import com.google.common.hash.Hashing;
 import ir.aliloc.api.config.GlobalConstant;
-import ir.aliloc.api.security.MyAuthenticationManager;
-import ir.aliloc.api.security.MyUserDetailService;
 import ir.aliloc.api.core.models.init.VerifyCodeModel;
 import ir.aliloc.api.core.models.response.SMSModel;
 import ir.aliloc.api.core.models.response.TokenModel;
@@ -22,6 +20,8 @@ import ir.aliloc.api.core.util.GlobalService;
 import ir.aliloc.api.core.util.SMSService;
 import ir.aliloc.api.core.util.VoucherCodeConfig;
 import ir.aliloc.api.core.util.VoucherCodes;
+import ir.aliloc.api.security.MyAuthenticationManager;
+import ir.aliloc.api.security.MyUserDetailService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -40,7 +40,10 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 @Transactional

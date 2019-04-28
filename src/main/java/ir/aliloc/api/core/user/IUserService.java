@@ -1,15 +1,11 @@
 /**
  * 10/9/2018
- * author: mostafa.mashayekhi9@gmail.com
+ * author: alikarimipour157@gmail.com
  */
 package ir.aliloc.api.core.user;
 
 
-import ir.aliloc.api.core.user.models.UserRequest;
-import ir.aliloc.api.core.user.models.UserRateDTO;
-import ir.aliloc.api.core.user.models.User;
-import ir.aliloc.api.core.user.models.UserPassDTO;
-import ir.aliloc.api.core.user.models.UserDTO;
+import ir.aliloc.api.core.user.models.*;
 
 public interface IUserService {
 
