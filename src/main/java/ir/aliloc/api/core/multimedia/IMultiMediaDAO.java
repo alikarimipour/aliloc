@@ -6,7 +6,7 @@ package ir.aliloc.api.core.multimedia;
 
 interface IMultiMediaDAO {
 
-    MultiMedia addProfile(MultiMedia multiMedia) throws Exception;
+    MultiMedia addMultimedia(MultiMedia multiMedia) throws Exception;
 
-    MultiMedia getMultiMediaByAddressId(long multimediaAddressId) throws Exception;
+    MultiMedia getMultimediabyId(long id) throws Exception;
 }

@@ -15,15 +15,15 @@ class MultiMediaDAO implements IMultiMediaDAO{
     private SessionFactory mSessionFactory;
 
     @Override
-    public MultiMedia addProfile(MultiMedia multiMedia) throws Exception {
+    public MultiMedia addMultimedia(MultiMedia multiMedia) throws Exception {
         long multimediaId = (long) mSessionFactory.getCurrentSession().save(multiMedia);
         return mSessionFactory.getCurrentSession().get(MultiMedia.class,multimediaId);
     }
 
     @Override
-    public MultiMedia getMultiMediaByAddressId(long multimediaAddressId) throws Exception {
-//        Query query = mSessionFactory.getCurrentSession().createQuery("from MultiMedia ")
-        return null;
+    public MultiMedia getMultimediabyId(long id) throws Exception {
+        return mSessionFactory.getCurrentSession().get(MultiMedia.class,id);
     }
+
 
 }
