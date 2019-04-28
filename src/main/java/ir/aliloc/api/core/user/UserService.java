@@ -92,7 +92,7 @@ class UserService implements IUserService {
         User user = new User();
         if (userRequest.getPicUrl() != null && !userRequest.getPicUrl().isEmpty()) {
             String finalUrl = GlobalConstant.UPLOAD_URL + "/" + GlobalConstant.UPLOAD_PROFILE_BUCKET + "/" + userRequest.getPicUrl();
-            user.setAvatar(mIMultiMediaService.addProfilePic(finalUrl));
+//            user.setAvatar(mIMultiMediaService.addProfilePic(finalUrl));
         }
         user.setId(userId);
         user.setBirthDate(userRequest.getBirthDate());

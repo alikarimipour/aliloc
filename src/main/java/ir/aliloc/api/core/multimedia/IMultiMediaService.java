@@ -4,7 +4,11 @@
  */
 package ir.aliloc.api.core.multimedia;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface IMultiMediaService {
 
-    MultiMedia addProfilePic(String url) throws Exception;
+    MultiMediaDTO addMultiMedia(MultipartFile file) throws Exception;
+
+    MultiMedia getMainMultiMediaById(long id) throws Exception;
 }
