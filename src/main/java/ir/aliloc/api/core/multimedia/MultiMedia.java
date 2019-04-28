@@ -1,6 +1,6 @@
 /**
  * 10/2/2018
- * author: mostafa.mashayekhi9@gmail.com
+ * author: alikarimipour157@gmail.com
  */
 package ir.aliloc.api.core.multimedia;
 
@@ -38,6 +38,10 @@ public class MultiMedia {
 
     @Column(name = "size")
     private double size;
+
+    @Lob
+    @Column(name="file")
+    private byte[] file;
 
 
 }

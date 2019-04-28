@@ -14,7 +14,7 @@ import java.util.*;
 
 /**
  * 6/17/2018
- * mostafa.mashayekhi9@gmail.com
+ * alikarimipour157@gmail.com
  */
 @Service
 public class GlobalService {

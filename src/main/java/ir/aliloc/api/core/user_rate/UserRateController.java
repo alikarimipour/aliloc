@@ -1,13 +1,13 @@
 /**
  * 12/2/2018
- * author: mostafa.mashayekhi9@gmail.com
+ * author: alikarimipour157@gmail.com
  */
 package ir.aliloc.api.core.user_rate;
 
 import ir.aliloc.api.config.MessageConstant;
-import ir.aliloc.api.exception.CustomizeResponseEntityExceptionHandler;
 import ir.aliloc.api.core.models.init.MainModel;
 import ir.aliloc.api.core.models.request.OffsetSizeRequest;
+import ir.aliloc.api.exception.CustomizeResponseEntityExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
