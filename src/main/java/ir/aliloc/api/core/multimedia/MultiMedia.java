@@ -43,5 +43,8 @@ public class MultiMedia {
     @Column(name="file")
     private byte[] file;
 
+    @Column(name = "name")
+    private String name;
+
 
 }
