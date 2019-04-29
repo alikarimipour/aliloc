@@ -8,7 +8,7 @@ public class GlobalConstant {
 
     public static final String APP_VERSION = "0.0.1";
     public static final String SECRET_KEY = "DhW5C=sbNzQQSEt5TaU+dSBucSRYehvJ6V#ehVx=J#yM2Wc5UbVC63!L8$^jxBy6LVfF5RsX-yW&GN%j_6QmfRxY7?3cmZKK^*g$yUexHvYxrNU!KU6xe$ny";
-    public static final String SMS_VERIFICATION_CODE="به جمع کاربران اپلیکیشن استاد مطهری خوش آمدید. کد فعال سازی شما :";
+    public static final String SMS_VERIFICATION_CODE="به جمع کاربران خوش آمدید. کد فعال سازی شما :";
 
 
     public static final int AUTH_ID_NUMBER = 1500;//generate auth Id with (* or /)
