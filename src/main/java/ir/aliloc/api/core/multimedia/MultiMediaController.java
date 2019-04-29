@@ -73,7 +73,7 @@ public class MultiMediaController {
         InputStream targetStream = new ByteArrayInputStream(mainMultiMedia.getFile());
         InputStreamResource resource = new InputStreamResource(targetStream);
         return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + "salam" + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + mainMultiMedia.getName() + "\"")
                 .contentLength(mainMultiMedia.getFile().length)
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
                 .body(resource);
