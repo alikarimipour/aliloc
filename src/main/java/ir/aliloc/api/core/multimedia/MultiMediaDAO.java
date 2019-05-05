@@ -9,20 +9,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-class MultiMediaDAO implements IMultiMediaDAO{
+class MultiMediaDAO implements IMultiMediaDAO {
 
     @Autowired
     private SessionFactory mSessionFactory;
 
     @Override
-    public MultiMedia addMultimedia(MultiMedia multiMedia) throws Exception {
+    public MultiMedia addMultimedia(MultiMedia multiMedia) {
         long multimediaId = (long) mSessionFactory.getCurrentSession().save(multiMedia);
-        return mSessionFactory.getCurrentSession().get(MultiMedia.class,multimediaId);
+        return mSessionFactory.getCurrentSession().get(MultiMedia.class, multimediaId);
     }
 
     @Override
-    public MultiMedia getMultimediabyId(long id) throws Exception {
-        return mSessionFactory.getCurrentSession().get(MultiMedia.class,id);
+    public void updateMultimedia(MultiMedia multiMedia) {
+        mSessionFactory.getCurrentSession().update(multiMedia);
+    }
+
+    @Override
+    public MultiMedia getMultimediabyId(long id) {
+        return mSessionFactory.getCurrentSession().get(MultiMedia.class, id);
     }
 
 

@@ -6,6 +6,7 @@ package ir.aliloc.api.core.multimedia;
 
 import ir.aliloc.api.config.MessageConstant;
 import ir.aliloc.api.core.models.init.MainModel;
+import ir.aliloc.api.core.models.response.Post;
 import ir.aliloc.api.exception.CustomizeResponseEntityExceptionHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -13,17 +14,16 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/multimedia")
 public class MultiMediaController {
 
     @Autowired
@@ -47,7 +47,7 @@ public class MultiMediaController {
     }*/
 
 
-    @PostMapping("/multimedia/upload") // //new annotation since 4.3
+    @PostMapping("/upload") // //new annotation since 4.3
     public ResponseEntity<MainModel<MultiMediaDTO>> singleFileUpload(@RequestParam("file") MultipartFile file) {
 
         MainModel<MultiMediaDTO> mainModel = new MainModel<>();
@@ -65,7 +65,8 @@ public class MultiMediaController {
         }
     }
 
-    @PostMapping("/multimedia/download") // //new annotation since 4.3
+//    @PostMapping() // //new annotation since 4.3
+    @GetMapping("/download")
     public ResponseEntity<InputStreamResource> downloadFileById(@RequestParam("id") long id) throws Exception {
 
 
@@ -80,5 +81,16 @@ public class MultiMediaController {
 
     }
 
+    @GetMapping("/test") // //new annotation since 4.3
+    public ResponseEntity sampleJsonGeneratorForTest() {
+        List<Post> posts = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Post post = new Post();
+            post.setContent("salam" + i);
+            post.setPostImageURL("http://185.86.36.19:8090/multimedia/download?id=9");
+            posts.add(post);
+        }
+        return new ResponseEntity<>(posts, HttpStatus.OK);
 
+    }
 }

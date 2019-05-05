@@ -35,15 +35,23 @@ class MultiMediaService implements IMultiMediaService {
         multiMedia.setMime(MimeType.IMAGE);
         multiMedia.setFile(file.getBytes());
         multiMedia.setName(file.getOriginalFilename());
+        String pathFolder;
+        if (mIAuthenticationFaced.getAuthentication().getName().equals("anonymousUser")) {
+            pathFolder = "C://locTemp//anonymousUser//";
+        } else {
+            pathFolder = "C://locTemp//" + Long.parseLong(mIAuthenticationFaced.getAuthentication().getName()) + "//";
+        }
 
-
-        String pathFolder = "C://locTemp//" + Long.parseLong(mIAuthenticationFaced.getAuthentication().getName()) + "//";
         new File(pathFolder).mkdirs();
 
         Path path = Paths.get(pathFolder + file.getOriginalFilename());
         byte[] bytes = file.getBytes();
         Files.write(path, bytes);
-        return mModelMapper.map(mIMultiMediaDAO.addMultimedia(multiMedia), MultiMediaDTO.class);
+        //todo change later and save method structure and save without select
+        multiMedia = mIMultiMediaDAO.addMultimedia(multiMedia);
+        multiMedia.setUrl("http://185.86.36.19:8090/multimedia/download?id=" + multiMedia.getId());
+        mIMultiMediaDAO.updateMultimedia(multiMedia);
+        return mModelMapper.map(multiMedia, MultiMediaDTO.class);
     }
 
     @Override
